@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900  text-white">
+
+    <!-- Futuristic Navbar -->
+    <nav class="bg-gradient-to-r from-gray-900 via-black to-gray-900 p-6 shadow-xl">
+        <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+            <div
+                class="text-white font-extrabold text-4xl mb-4 lg:mb-0 hover:text-orange-500 transition-all duration-300 cursor-pointer">
+                Portfolio</div>
+
+            <div class="lg:hidden">
+                <button class="text-white focus:outline-none">
+                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="relative group text-white text-lg font-medium">
+                    <span class="relative z-10">Contact Me</span>
+                    <span
+                        class="absolute inset-0 bg-orange-500 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform origin-right duration-300 z-0"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Hero Section -->
+<section class="relative h-[60vh] lg:h-[80vh]">
+    <!-- Video Background -->
+    <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="/2792370-hd_1920_1080_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Overlay for better contrast -->
+    <div class="absolute inset-0 bg-black opacity-50 z-1"></div>
+
+    <!-- Content Section -->
+    <div class="flex items-center justify-center h-full relative z-10 px-4 sm:px-8 lg:px-12">
+        <div class="text-center text-white max-w-2xl w-full">
+            
+            <!-- Title -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[#00FFFF] tracking-widest border-effect">
+                <span class="border-text">Algorithm Hackathon 9.0</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <h2 class="text-md sm:text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 tracking-wide font-medium">
+                Innovating the Future with Algorithms
+            </h2>
+
+            <!-- Countdown Timer -->
+            <div class="flex flex-wrap justify-center gap-8 mb-8">
+                <div class="futuristic-timer">
+                    <div id="days" class="timer-value text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00FFFF] glow-effect"></div>
+                    <div class="timer-label text-gray-400 text-xs sm:text-sm uppercase">Days</div>
+                </div>
+                <div class="futuristic-timer">
+                    <div id="hours" class="timer-value text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00FFFF] glow-effect"></div>
+                    <div class="timer-label text-gray-400 text-xs sm:text-sm uppercase">Hours</div>
+                </div>
+                <div class="futuristic-timer">
+                    <div id="minutes" class="timer-value text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00FFFF] glow-effect"></div>
+                    <div class="timer-label text-gray-400 text-xs sm:text-sm uppercase">Minutes</div>
+                </div>
+                <div class="futuristic-timer">
+                    <div id="seconds" class="timer-value text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00FFFF] glow-effect"></div>
+                    <div class="timer-label text-gray-400 text-xs sm:text-sm uppercase">Seconds</div>
+                </div>
+            </div>
+
+            <!-- Register Button -->
+            <a href="#register" 
+                class="bg-gradient-to-r from-[#00FFFF] to-[#00BFFF] text-gray-900 font-semibold text-lg py-3 px-8 rounded-full shadow-2xl hover:scale-105 transform transition duration-300 hover:bg-gradient-to-r hover:from-[#00BFFF] hover:to-[#00FFFF]">
+                Register Now
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Add This Script to Enable Countdown Timer -->
+<script>
+    // Set the date we're counting down to
+    const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+
+    // Update the count down every 1 second
+    const x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in the respective elements
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // If the count down is finished, display a message
+        if (distance < 0) {
+            clearInterval(x);
+            document.querySelector(".futuristic-timer").innerHTML = "Event Started!";
+        }
+    }, 1000);
+</script>
+
+<style>
+    /* Glow Effect for Text */
+    .glow-effect {
+        text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 80px #00FFFF;
+    }
+
+    /* Timer Styles */
+    .futuristic-timer .timer-value {
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Fullscreen Background Styling */
+    body {
+        background-color: #000; /* Ensure fallback for transparent areas */
+    }
+</style>
+
+
+<!-- Add this script for countdown functionality -->
+<script>
+    // Set the target date for the countdown
+    const targetDate = new Date("January 1, 2025 00:00:00").getTime();
+
+    // Function to update the countdown timer
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = targetDate - now;
+
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Display the results
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // If the countdown ends, display "EXPIRED"
+        if (timeLeft < 0) {
+            clearInterval(interval);
+            document.getElementById("days").innerHTML = "EXPIRED";
+            document.getElementById("hours").innerHTML = "";
+            document.getElementById("minutes").innerHTML = "";
+            document.getElementById("seconds").innerHTML = "";
+        }
+    }
+
+    // Update the countdown every second
+    const interval = setInterval(updateCountdown, 1000);
+</script>
+
+        </div>
+      
+        <hr style="background-color: #45a29e; padding: 1px;">
+
+        <!-- Horizontal Box Container -->
+        <div class="flex flex-wrap justify-center gap-12 px-8 py-12">
+          <!-- Box 1: Date -->
+<div
+class="w-72 h-24 bg-gradient-to-r from-gray-800 to-gray-700 border-4 border-[#45a29e] rounded-xl shadow-xl flex flex-col justify-center items-center text-white text-center hover:scale-105 transform transition duration-300 hover:shadow-2xl hover:animate-pulse">
+<h4 class="text-3xl font-bold flex items-center">
+    <i class="fas fa-calendar-day text-4xl mr-2"></i> <!-- Icon for Date -->
+    14th - 15th Feb
+</h4>
+</div>
+
+<!-- Box 2: Team -->
+<div
+class="w-72 h-24 bg-gradient-to-r from-gray-800 to-gray-700 border-4 border-[#45a29e] rounded-xl shadow-xl flex flex-col justify-center items-center text-white text-center hover:scale-105 transform transition duration-300 hover:shadow-2xl hover:animate-pulse">
+<h4 class="text-3xl font-bold flex items-center">
+    <i class="fas fa-users text-4xl mr-2"></i> <!-- Icon for Team -->
+    2 - 3 Members
+</h4>
+</div>
+
+<!-- Box 3: Free Entry -->
+<div
+class="w-72 h-24 bg-gradient-to-r from-gray-800 to-gray-700 border-4 border-[#45a29e] rounded-xl shadow-xl flex flex-col justify-center items-center text-white text-center hover:scale-105 transform transition duration-300 hover:shadow-2xl hover:animate-pulse">
+    <h4 class="text-3xl font-bold flex items-center">
+       
+        <span class="text-4xl mr-2">₹</span> <!-- Indian Rupee symbol -->
+        Free of Cost
+    </h4>
+</div>
+
+<!-- Box 4: Free Entry (Duplicate) -->
+<div
+class="w-72 h-24 bg-gradient-to-r from-gray-800 to-gray-700 border-4 border-[#45a29e] rounded-xl shadow-xl flex flex-col justify-center items-center text-white text-center hover:scale-105 transform transition duration-300 hover:shadow-2xl hover:animate-pulse">
+<h4 class="text-3xl font-bold flex items-center">
+    <i class="fas fa-gift text-4xl mr-2"></i> <!-- Icon for Free Entry -->
+    #####
+</h4>
+</div>
+
+
+        </div>
+
+        <hr style="background-color: #45a29e; padding: 1px;">
+
+
+
+        <!-- Prizes Section -->
+        <section class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-white py-10">
+            <div class="max-w-7xl mx-auto px-8">
+                <!-- Title and Description -->
+                <h2 class="text-5xl font-extrabold text-center text-[#45a29e] mb-6">Exciting Prizes Await!</h2>
+
+                <hr style="background-color: #45a29e; padding: 1px;">
+                <!-- <p class="text-xl text-center mb-16">Stand a chance to win awards worth ₹2,00,000 💸</p> -->
+
+                <!-- Winners Prize Grid -->
+                <div class="grid grid-cols-1 mt-6 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+                    <!-- Winners Prize -->
+                    <div
+                        class="w-full border-4 border-[#45a29e] bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                        <hr class="my-4" style="background-color: #45a29e; height: 4px;">
+
+                        <!-- Image Section -->
+                        <div class="text-center mb-6">
+                            <img src="https://via.placeholder.com/100" alt="Prize Image" class="rounded-full mx-auto">
+                        </div>
+
+                        <h3 class="text-4xl font-semibold text-[#45a29e] mb-4">Runners-Up</h3>
+
+                        <p class="text-2xl mb-6 text-white">The Runners-Up of SEED Hackathon will receive a whopping
+                            cash prize of ₹ 35,000 per team</p>
+                        <p class="text-xl text-gray-300">Cash Prizes worth ₹ 70,000</p>
+                    </div>
+
+
+
+
+                    <!-- Runners-Up Prize -->
+
+                    <div
+                        class="w-full border-4 border-[#45a29e] bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                        <hr class="my-4" style="background-color: #45a29e; height: 4px;">
+
+                        <!-- Image Section -->
+                        <div class="text-center mb-6">
+                            <img src="https://via.placeholder.com/100" alt="Prize Image" class="rounded-full mx-auto">
+                        </div>
+
+                        <h3 class="text-4xl font-semibold text-[#45a29e] mb-4">Runners-Up</h3>
+
+                        <p class="text-2xl mb-6 text-white">The Runners-Up of SEED Hackathon will receive a whopping
+                            cash prize of ₹ 35,000 per team</p>
+                        <p class="text-xl text-gray-300">Cash Prizes worth ₹ 70,000</p>
+                    </div>
+
+
+                    <!-- Runners-Up Prize
+            <div class="w-full bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                <h3 class="text-4xl font-semibold text-orange-500 mb-4">Runners-Up</h3>
+                <p class="text-2xl mb-6">The Runners-Up of SEED Hackathon will receive a whopping cash prize of ₹ 35,000 per team</p>
+                <p class="text-xl text-gray-300">Cash Prizes worth ₹ 70,000</p>
+            </div> -->
+
+                    <!-- First Runners-Up Prize -->
+                    <div
+                        class="w-full border-4 border-[#45a29e] bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                        <hr class="my-4" style="background-color: #45a29e; height: 4px;">
+
+                        <!-- Image Section -->
+                        <div class="text-center mb-6">
+                            <img src="https://via.placeholder.com/100" alt="Prize Image" class="rounded-full mx-auto">
+                        </div>
+
+                        <h3 class="text-4xl font-semibold text-[#45a29e] mb-4">Runners-Up</h3>
+
+                        <p class="text-2xl mb-6 text-white">The Runners-Up of SEED Hackathon will receive a whopping
+                            cash prize of ₹ 35,000 per team</p>
+                        <p class="text-xl text-gray-300">Cash Prizes worth ₹ 70,000</p>
+                    </div>
+                </div>
+
+                <!-- 
+         Additional Prizes and Benefits Section
+        <div class="mt-16 text-center">
+            <h3 class="text-3xl font-semibold mb-8">Total Cash Prize Pool of ₹2,00,000 for the winners!</h3>
+            <div class="space-y-6 text-xl">
+                <p class="text-lg">Gift Vouchers from SEED Global Education to winners</p>
+                <p class="text-lg">Appreciation Letters to winners by GW Engineering & Boston College of Arts & Sciences</p>
+                <p class="text-lg">Hampers to top 30 teams from GW Engineering & Boston College of Arts & Sciences (Hamper includes Bag, Bottle, Diary, Badges, Covers, etc.)</p>
+                <p class="text-lg">Appreciation Letters to top 30 teams by SEED Global Education</p>
+                <p class="text-lg">Application Fee Waivers to GW Engineering & Boston College of Arts & Sciences for all participants</p>
+                <p class="text-lg">Participation Certificates to all participants</p>
+            </div>
+        </div>
+    </div>  -->
+
+                <div class="mt-16 text-center">
+                    
+                    <h3 class="text-3xl font-semibold mb-8">Total Cash Prize Pool of ₹2,00,000 for the winners!</h3>
+                </div>
+                <hr class="my-4" style="background-color: #45a29e; height: 4px;">
+        </section>
+
+
+        <section>
+            <hr style="background-color: #45a29e; padding: 1px;">
+        </section>
+        
+        <div class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-white">
+            
+            <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
+              <!-- Registration Section -->
+              <section class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-white py-10">
+                <div class="max-w-7xl mx-auto px-8">
+                    <!-- Form Section -->
+                    <!-- Title and Description -->
+                    <h2 class="text-5xl font-extrabold text-center text-[#45a29e] mb-6">Exciting Prizes Await!</h2>
+                    <hr style="background-color: #45a29e; padding: 1px;">
+                    <!-- Registration Form -->
+                    <div class="mt-10 border-4 border-[#45a29e] bg-gray-800 p-8 rounded-xl shadow-lg">
+                        <h2 class="text-5xl font-extrabold text-center text-[#45a29e] mb-6">What are you waiting for? Submit Now!</h2>
+                        <form class="space-y-6">
+                            <!-- Team Member 1 -->
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Team Member 1</h3>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                                    <input type="text" placeholder="First Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="text" placeholder="Last Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="email" placeholder="Email" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="text" placeholder="Mobile Number" class="p-3 rounded bg-gray-700 text-white">
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Country of Residence</option>
+                                        <option>India</option>
+                                        <option>USA</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <input type="text" placeholder="Undergraduate Institution Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Undergraduate Completion Year</option>
+                                        <option>2025</option>
+                                        <option>2024</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+            
+                            <!-- Team Member 2 -->
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Team Member 2</h3>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                                    <input type="text" placeholder="First Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="text" placeholder="Last Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="email" placeholder="Email" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="text" placeholder="Mobile Number" class="p-3 rounded bg-gray-700 text-white">
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Country of Residence</option>
+                                        <option>India</option>
+                                        <option>USA</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <input type="text" placeholder="Undergraduate Institution Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Undergraduate Completion Year</option>
+                                        <option>2025</option>
+                                        <option>2024</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+            
+                            <!-- Team Member 3 -->
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Team Member 3</h3>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                                    <input type="text" placeholder="First Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="text" placeholder="Last Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="email" placeholder="Email" class="p-3 rounded bg-gray-700 text-white">
+                                    <input type="text" placeholder="Mobile Number" class="p-3 rounded bg-gray-700 text-white">
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Country of Residence</option>
+                                        <option>India</option>
+                                        <option>USA</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <input type="text" placeholder="Undergraduate Institution Name" class="p-3 rounded bg-gray-700 text-white">
+                                    <select class="p-3 rounded bg-gray-700 text-white">
+                                        <option>Undergraduate Completion Year</option>
+                                        <option>2025</option>
+                                        <option>2024</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+            
+                            <!-- Problem Statement and Abstract -->
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400 mb-4">Problem Statement and Abstract</h3>
+                                <select class="p-3 rounded bg-gray-700 text-white w-full">
+                                    <option>Problem Statement</option>
+                                    <option>Statement 1</option>
+                                    <option>Statement 2</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="mt-4">
+                                    <label class="block text-white mb-2">Abstract Document</label>
+                                    <input type="file" class="w-full text-gray-400 p-3 bg-gray-700 rounded">
+                                    <p class="text-gray-400 text-sm mt-2">Drag and drop or browse files to upload</p>
+                                </div>
+                            </div>
+            
+                            <!-- Agreement -->
+                            <div>
+                                <p class="text-gray-400 text-sm mt-4">
+                                    By submitting this form you authorize the participating universities, SEED Global Education, and its partners to process your data and send you personalized advice in accordance with their respective privacy policies. If you change your mind, you can unsubscribe anytime.
+                                </p>
+                            </div>
+            
+                            <!-- Submit Button -->
+                            <div class="text-center">
+                                <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white py-3 px-6 rounded-full font-semibold mt-6">
+                                    Submit Registration
+                                </button>
+                            </div>
+            
+                            <section class="text-white py-12 px-4">
+                                <!-- Contact Us Form -->
+                                <div class="border-4 border-[#45a29e] bg-gray-800 p-7 rounded-xl shadow-lg">
+                                    <h2 class="text-4xl font-extrabold text-center text-[#45a29e] mb-6">"Got questions, issues, or feedback? Reach out to us – we're here to help!"</h2>
+                                    <hr style="background-color: #45a29e; padding: 1px;">
+                                    <form class="space-y-6">
+                                        <!-- Contact Person Boxes -->
+                                        <div class="flex flex-col sm:flex-row space-x-4 mt-6">
+                                            <!-- Contact Person 1 -->
+                                            <div class="w-full sm:w-1/2 border-4 border-[#45a29e] bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                                                <div class="flex items-center justify-center mb-4">
+                                                    <!-- Profile Picture -->
+                                                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEIbjfS_BmYCQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731069416562?e=2147483647&v=beta&t=LeViHc2KrvJMv24dQWdFjJsjwwOfJuFlke5ouWPjBjI" alt="Contact Person 1" class="w-12 h-12 rounded-full mr-4">
+                                                    <h3 class="text-2xl font-bold text-center text-[#45a29e]">Contact Person</h3>
+                                                </div>
+                                                <div class="space-y-4">
+                                                    <p class="text-white"><strong>Name:</strong> John Doe</p>
+                                                    <p class="text-white"><strong><i class="fas fa-envelope mr-2 text-[#45a29e]"></i> :</strong> johndoe@example.com</p>
+                                                    <p class="text-white"><strong><i class="fas fa-phone-alt mr-2 text-[#45a29e]"></i> :</strong> +1234567890</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Contact Person 2 -->
+                                            <div class="w-full sm:w-1/2 border-4 border-[#45a29e] bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                                                <div class="flex items-center justify-center mb-4">
+                                                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQEIbjfS_BmYCQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731069416562?e=2147483647&v=beta&t=LeViHc2KrvJMv24dQWdFjJsjwwOfJuFlke5ouWPjBjI" alt="Contact Person 2" class="w-12 h-12 rounded-full mr-4">
+                                                    <h3 class="text-2xl font-bold text-center text-[#45a29e]">Contact Person</h3>
+                                                </div>
+                                                <div class="space-y-4">
+                                                    <p class="text-white"><strong>Name:</strong> Jane Doe</p>
+                                                    <p class="text-white"><strong><i class="fas fa-envelope mr-2 text-[#45a29e]"></i> :</strong> janedoe@example.com</p>
+                                                    <p class="text-white"><strong><i class="fas fa-phone-alt mr-2 text-[#45a29e]"></i> :</strong> +0987654321</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+
+
+
+
+<script>
+    let map;
+    let marker;
+
+    // Initialize Google Map
+    function initMap() {
+        const initialLocation = { lat: 20.5937, lng: 78.9629 }; // Default location (India)
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: initialLocation,
+            zoom: 5,
+        });
+
+        // Add a marker at the default location
+        marker = new google.maps.Marker({
+            position: initialLocation,
+            map: map,
+        });
+    }
+</script>
+
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+ <!-- Registration & Timeline Section -->
+<section class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-white py-10">
+    <div class="max-w-7xl mx-auto px-8">
+        <!-- Title and Description -->
+        <h2 class="text-5xl font-extrabold text-center text-[#45a29e] mb-6">Hackathon Timeline</h2>
+
+        <hr style="background-color: #45a29e; padding: 1px;">
+
+        <!-- Timeline Container -->
+        <div class="relative border-l-4 border-[#45a29e] bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl  mt-10">
+            <!-- Timeline Item 1 -->
+            <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+
+             <!-- Timeline Item 1 -->
+             <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+
+             <!-- Timeline Item 1 -->
+             <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+             <!-- Timeline Item 1 -->
+             <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+
+              <!-- Timeline Item 1 -->
+            <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+
+              <!-- Timeline Item 1 -->
+              <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+              <!-- Timeline Item 1 -->
+              <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+              <!-- Timeline Item 1 -->
+              <div class="mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-[#45a29e] rounded-full -left-4 border-4 flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-white"></i> <!-- Example icon -->
+                </div>
+                <div class="p-6 border-[#45a29e] border-4 bg-gradient-to-r from-gray-700 to-gray-600 p-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all">
+                    <!-- Event Title Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Event Title -->
+                        
+                        <h3 class="text-4xl font-semibold text-[#45a29e]">Event 1 Title</h3>
+                    </div>
+                    
+                    <!-- Event Description Section -->
+                    <div class="flex items-center mb-6">
+                        <!-- Icon for Description -->
+                        <i class="fas fa-info-circle text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-2xl text-white">This is a brief description of Event 1, including key dates, goals, or any relevant event details.</p>
+                    </div>
+                    
+                    <!-- Event Date Section -->
+                    <div class="flex items-center">
+                        <!-- Icon for Date -->
+                        <i class="fas fa-calendar-alt text-[#45a29e] text-2xl mr-4"></i>
+                        <p class="text-xl text-gray-300">Date: January 1, 2025</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+            </div>
+
+            <hr style="background-color: #45a29e; padding: 1px;">
+
+
+
+
+        </div>
+
+        
+.....
+
+
+
+        
+    </section>
+    </section>
+
+
+
+
+    <style>
+        /* Futuristic Timer Styles */
+        .futuristic-timer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #1f2833, #1b252f);
+            border: 2px solid #45a29e;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 15px rgba(69, 162, 158, 0.6);
+            width: 120px;
+            height: 120px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .futuristic-timer:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(69, 162, 158, 0.8);
+        }
+
+        .timer-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #66fcf1;
+            text-shadow: 0 0 10px #66fcf1, 0 0 20px #45a29e;
+        }
+
+        .timer-label {
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #c5c6c7;
+            margin-top: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        /* Navbar Hover Animation */
+        .group .relative {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .group .absolute {
+            transition: all 0.3s ease-in-out;
+            transform-origin: left;
+        }
+
+        /* Background Glow Effect */
+        body {
+            background-color: #0b0c10;
+        }
+
+        /* Box Hover Animation */
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.7);
+            animation: pulseAnimation 1s infinite;
+        }
+
+        @keyframes pulseAnimation {
+            0% {
+                box-shadow: 0 4px 20px rgba(0, 255, 255, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 8px 40px rgba(0, 255, 255, 0.9);
+            }
+
+            100% {
+                box-shadow: 0 4px 20px rgba(0, 255, 255, 0.7);
+            }
+        }
+    </style>
+
+    <script>
+        // Countdown Timer Script
+        const countdownDate = new Date("Jan 1, 2028 00:00:00").getTime();
+
+        const updateCountdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                document.getElementById("days").textContent = "0";
+                document.getElementById("hours").textContent = "0";
+                document.getElementById("minutes").textContent = "0";
+                document.getElementById("seconds").textContent = "0";
+            }
+        }, 1000);
+    </script>
+
+
+
+
+</body>
+
+</html>
